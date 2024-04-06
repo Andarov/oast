@@ -73,7 +73,7 @@ const PresaleHero = () => {
           <div>
             <p class="text-oast-midnight-300 text-sm">First Drop in</p>
             <div class="text-lg text-oast-midnight-300 font-bold">
-              <Countdown/>
+            <Countdown date={new Date("2024-04-09T23:59:59")}/>
             </div>
           </div>
           <div>

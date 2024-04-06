@@ -78,7 +78,7 @@ const HomeHero = () => {
             <div>
               <p class="text-oast-midnight-300 text-sm">Auction ends in</p>
               <div class="text-lg text-oast-midnight-300 font-bold">
-                <Countdown />
+                <Countdown date={new Date("2024-04-10T23:59:59")}/>
               </div>
             </div>
             {/* highest bid */}
