@@ -11,3 +11,13 @@
 nav a.active{
     @apply text-oast-light underline decoration-2 underline-offset-4 decoration-oast-primary-medium
 }
+
+/* hide input appearence */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}

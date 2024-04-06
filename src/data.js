@@ -74,3 +74,97 @@ export const faqData = [
   },
 ];
 
+import greenSquare from "./assets/green-square.svg";
+export const histories = [
+  {
+    id: 1,
+    account: "0xe0f3...1011",
+    acountImg: greenSquare,
+    activity: "Bit",
+    ammountCast: "19000 CAST",
+    ammountevro: "2061.89",
+    time: {
+      count: 13,
+      watch: "minute",
+    },
+    transaction: "0xee21...1a4f",
+  },
+  {
+    id: 2,
+    account: "0xe0f3...1011",
+    acountImg: greenSquare,
+    activity: "Bit",
+    ammountCast: "19000 CAST",
+    ammountevro: "2061.89",
+    time: {
+      count: 13,
+      watch: "minute",
+    },
+    transaction: "0xee21...1a4f",
+  },
+  {
+    id: 3,
+    account: "0xe0f3...1011",
+    acountImg: greenSquare,
+    activity: "Bit",
+    ammountCast: "19000 CAST",
+    ammountevro: "2061.89",
+    time: {
+      count: 13,
+      watch: "minute",
+    },
+    transaction: "0xee21...1a4f",
+  },
+  {
+    id: 4,
+    account: "0xe0f3...1011",
+    acountImg: greenSquare,
+    activity: "Bit",
+    ammountCast: "19000 CAST",
+    ammountevro: "2061.89",
+    time: {
+      count: 13,
+      watch: "minute",
+    },
+    transaction: "0xee21...1a4f",
+  },
+  {
+    id: 5,
+    account: "0xe0f3...1011",
+    acountImg: greenSquare,
+    activity: "Bit",
+    ammountCast: "19000 CAST",
+    ammountevro: "2061.89",
+    time: {
+      count: 13,
+      watch: "minute",
+    },
+    transaction: "0xee21...1a4f",
+  },
+  {
+    id: 6,
+    account: "0xe0f3...1011",
+    acountImg: greenSquare,
+    activity: "Bit",
+    ammountCast: "19000 CAST",
+    ammountevro: "2061.89",
+    time: {
+      count: 13,
+      watch: "minute",
+    },
+    transaction: "0xee21...1a4f",
+  },
+  {
+    id: 7,
+    account: "0xe0f3...1011",
+    acountImg: greenSquare,
+    activity: "Bit",
+    ammountCast: "19000 CAST",
+    ammountevro: "2061.89",
+    time: {
+      count: 13,
+      watch: "minute",
+    },
+    transaction: "0xee21...1a4f",
+  },
+]
