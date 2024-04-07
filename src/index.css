@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    body{
-        @apply bg-oast-main text-oast-light font-dmSans
-    }
+@layer base {
+  body {
+    @apply bg-oast-main text-oast-light font-dmSans;
+  }
 }
 
-nav a.active{
-    @apply text-oast-light underline decoration-2 underline-offset-4 decoration-oast-primary-medium
+nav a.active {
+  @apply text-oast-light underline decoration-2 underline-offset-4 decoration-oast-primary-medium hover:decoration-oast-primary-dark;
 }
 
 /* hide input appearence */
@@ -18,6 +18,6 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
