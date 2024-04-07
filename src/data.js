@@ -165,3 +165,56 @@ export const wallets = [
     img: "https://iconic.dynamic-static-assets.com/icons/sprite.svg#walletconnect"
   },
 ]
+
+export const nftProps = [
+  {
+    id: 1,
+    title: 'Name',
+    description: 'ISCHGL x LEGO® inspired NFT Shapes in White 2024 #1'
+  },
+  {
+    id: 2,
+    title: 'Description',
+    description: '“ISCHGL x LEGO® inspired NFT Shapes in White 2024" brings together breathtaking snow sculptures as NFTs, offering exclusive access to the evolving Web3 community. This collaboration invites you to immerse in a realm of art, networking, and innovation within the digital winter wonderland, all while celebrating the iconic design and creativity inspired by LEGO®'
+  },
+  {
+    id: 3,
+    title: 'Sculpture',
+    description: 'Theme Sculpture'
+  },
+  {
+    id: 4,
+    title: 'Artists',
+    description: 'Ivan Holzknecht (ITA), Armin Rifesser (ITA)'
+  },
+  {
+    id: 5,
+    title: 'Bricks',
+    description: '24 Gold'
+  },
+  {
+    id: 6,
+    title: 'Karat',
+    description: '24k (100%)'
+  },
+  {
+    id: 7,
+    title: 'Lego Set',
+    description: 'Surprise LEGO Editions - Value 2000€'
+  },
+  {
+    id: 8,
+    title: 'Access',
+    description: 'Premium Front Row VIP Access to Top of the Mountain Closing Concert on April 30th, 2024 - 2 people.'
+  },
+  {
+    id: 9,
+    title: 'Free Mint Pass',
+    description: 'Allowlist access, guarantees 1 free NFT from a future project with priority and limited-edition.'
+  },
+  {
+    id: 10,
+    title: 'Gold Special',
+    description: 'Meet & Greet Black Eyed Peas. Skiing Pass Ischgl - Saison 2024 / 2025 - 2 people - Value 2000€. Culinaric Voucher Alpenhaus - Value 1000€.'
+  },
+]
