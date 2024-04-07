@@ -14,6 +14,7 @@ const Home = () => {
       <HomeHero/>
       <ActivityHistory/>
       <NFTProps/>
+      <br />
       <NfTDetails/>
     </div>
   );

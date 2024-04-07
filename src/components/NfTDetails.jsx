@@ -2,9 +2,10 @@ import React from "react";
 
 const NfTDetails = () => {
   return (
-    <div className="space-y-5 mt-10 lg:mt-16">
-      <p className="font-bold text-lg leading-6 text-oast-midnight-200">NFT details</p>
+    <section className="space-y-5 mt-10 lg:mt-16">
+      <h2 className="font-bold text-lg leading-6 text-oast-midnight-200">NFT details</h2>
       <div className="border border-oast-midnight-700 px-5 pt-5 grid grid-flow-row-dense grid-cols-2 sm:grid-cols-5 gap-5 rounded-lg">
+        {/* first row */}
         <div className="pb-5 border-b border-oast-midnight-700">
           <p className="text-oast-midnight-300 text-sm font-bold capitalize">medium</p>
           <p className="text-oast-midnight-200 text-sm font-medium">Image (PNG)</p>
@@ -30,7 +31,7 @@ const NfTDetails = () => {
             target="_blank"
             href="https://ipfs.io/ipfs/QmYefxv8gs57qBuw7fKV66d3tUGAb6KKuV4RNC65T5kUeX/1"
           >
-            <button className="hover:text-brand-hover w-full text-sm text-oast-midnight-200 overflow-hidden text-ellipsis inline-flex justify-between items-center gap-2">
+            <span className="group hover:text-oast-primary-dark w-full text-sm text-oast-midnight-200 overflow-hidden text-ellipsis inline-flex justify-between items-center gap-2">
               <span className="text-ellipsis font-dm-mono overflow-hidden block">
                 QmYefxv8gs57qBuw7fKV66d3tUGAb6KKuV4RNC65T5kUeX
               </span>
@@ -44,15 +45,16 @@ const NfTDetails = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="lucide lucide-external-link shrink-0 text-oast-midnight-300 group-hover:text-brand-hover"
+                className="shrink-0 text-oast-midnight-300 group-hover:text-oast-primary-dark"
               >
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <line x1="10" x2="21" y1="14" y2="3"></line>
               </svg>
-            </button>
+            </span>
           </a>
         </div>
+        {/* second row */}
         <div className="pb-5 border-b border-oast-midnight-700 sm:border-0">
           <p className="text-oast-midnight-300 text-sm font-bold capitalize">
             blockchain
@@ -82,7 +84,7 @@ const NfTDetails = () => {
             target="_blank"
             href="https://etherscan.io/address/0xa71Fdf27D5e73fE22028957Bb8a0dBBd3409C44f"
           >
-            <button className="hover:text-brand-hover w-full text-sm text-oast-midnight-200 overflow-hidden text-ellipsis inline-flex justify-between items-center gap-2">
+            <span className="group hover:text-oast-primary-dark w-full text-sm text-oast-midnight-200 overflow-hidden text-ellipsis inline-flex justify-between items-center gap-2">
               <span className="text-ellipsis font-dm-mono overflow-hidden block ">
                 0xa71Fdf27D5e73fE22028957Bb8a0dBBd3409C44f&nbsp;
               </span>
@@ -96,17 +98,17 @@ const NfTDetails = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="lucide lucide-external-link shrink-0 text-oast-midnight-300 group-hover:text-brand-hover"
+                className="shrink-0 text-oast-midnight-300 group-hover:text-oast-primary-dark"
               >
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <line x1="10" x2="21" y1="14" y2="3"></line>
               </svg>
-            </button>
+            </span>
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
