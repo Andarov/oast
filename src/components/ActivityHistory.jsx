@@ -7,6 +7,8 @@ const ActivityHistory = () => {
   const [isPrevActive, setIsPrevActive] = useState(false);
   const [isNextActive, setIsNextActive] = useState(true);
 
+  const sortedHistories = histories.sort((a, b) => b.dateTime - a.dateTime);
+
   useEffect(() => {
     // Previous button state
     setIsPrevActive(first > 1);
@@ -25,7 +27,36 @@ const ActivityHistory = () => {
   const lastIndex = first * last;
   const firstIndex = lastIndex - last;
 
-  const carsSlicedArr = histories.slice(firstIndex, lastIndex);
+  const carsSlicedArr = sortedHistories.slice(firstIndex, lastIndex);
+
+  function formatTimeDifference(dateTime) {
+    const now = new Date();
+    const diffMilliseconds = now - dateTime;
+
+    const minuteMilliseconds = 60 * 1000;
+    const hourMilliseconds = 60 * minuteMilliseconds;
+    const dayMilliseconds = 24 * hourMilliseconds;
+    const yearMilliseconds = 365 * dayMilliseconds;
+
+    if (diffMilliseconds < minuteMilliseconds) {
+      const diffSeconds = Math.round(diffMilliseconds / 1000);
+      return `${diffSeconds} seconds ago`;
+    } else if (diffMilliseconds < hourMilliseconds) {
+      const diffMinutes = Math.round(diffMilliseconds / minuteMilliseconds);
+      return `${diffMinutes} minutes ago`;
+    } else if (diffMilliseconds < dayMilliseconds) {
+      const diffHours = Math.round(diffMilliseconds / hourMilliseconds);
+      return `${diffHours} hours ago`;
+    } else if (diffMilliseconds < 2 * dayMilliseconds) {
+      return `1 day ago`;
+    } else if (diffMilliseconds < yearMilliseconds) {
+      const diffDays = Math.round(diffMilliseconds / dayMilliseconds);
+      return `${diffDays} days ago`;
+    } else {
+      const diffYears = Math.round(diffMilliseconds / yearMilliseconds);
+      return `${diffYears} years ago`;
+    }
+  }
 
   return (
     <div>
@@ -101,7 +132,7 @@ const ActivityHistory = () => {
                       </div>
                     </td>
                     <td className="whitespace-nowrap px-3 md:px-0 py-5 text-sm text-oast-midnight-200">
-                      {tab.time.count} {tab.time.watch}
+                      {formatTimeDifference(tab.dateTime)}
                     </td>
                     <td className="whitespace-nowrap font-dmSans px-3 md:px-0 py-5 text-sm text-oast-midnight-200">
                       <a
@@ -149,7 +180,9 @@ const ActivityHistory = () => {
             <button
               onClick={handlePreviousClick}
               className={`inline-flex items-center whitespace-nowrap text-base leading-none font-medium duration-125 transition-all ease-in-out border border-oast-midnight-600 text-oast-light h-10 rounded-lg py-3 px-5 justify-center gap-1 pl-2.5 ${
-                isPrevActive ? "active:scale-95 hover:scale-105" : "opacity-50 cursor-not-allowed"
+                isPrevActive
+                  ? "active:scale-95 hover:scale-105"
+                  : "opacity-50 cursor-not-allowed"
               } active:transition-none active:scale-100 hover:scale-100 hover:bg-oast-midnight-800`}
               aria-label="Go to previous page"
               disabled={!isPrevActive}
@@ -175,7 +208,9 @@ const ActivityHistory = () => {
             <button
               onClick={handleNextClick}
               className={`inline-flex items-center whitespace-nowrap text-base leading-none font-medium duration-125 transition-all ease-in-out border border-oast-midnight-600 text-oast-light h-10 rounded-lg py-3 px-5 justify-center gap-1 pr-2.5 ${
-                isNextActive ? "active:scale-95 hover:scale-105" : "opacity-50 cursor-not-allowed"
+                isNextActive
+                  ? "active:scale-95 hover:scale-105"
+                  : "opacity-50 cursor-not-allowed"
               } active:transition-none active:scale-100 hover:scale-100 hover:bg-oast-midnight-800`}
               aria-label="Go to next page"
               disabled={!isNextActive}

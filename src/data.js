@@ -83,10 +83,7 @@ export const histories = [
     activity: "Bit",
     ammountCast: "19000 CAST",
     ammountevro: "2061.89",
-    time: {
-      count: 13,
-      watch: "minute",
-    },
+    dateTime: new Date("2024-04-05T23:59:59"),
     transaction: "0xee21...1a4f",
   },
   {
@@ -96,10 +93,7 @@ export const histories = [
     activity: "Bit",
     ammountCast: "19000 CAST",
     ammountevro: "2061.89",
-    time: {
-      count: 13,
-      watch: "minute",
-    },
+    dateTime: new Date("2024-04-01T23:59:59"),
     transaction: "0xee21...1a4f",
   },
   {
@@ -109,10 +103,7 @@ export const histories = [
     activity: "Bit",
     ammountCast: "19000 CAST",
     ammountevro: "2061.89",
-    time: {
-      count: 13,
-      watch: "minute",
-    },
+    dateTime: new Date("2024-04-02T23:59:59"),
     transaction: "0xee21...1a4f",
   },
   {
@@ -122,10 +113,7 @@ export const histories = [
     activity: "Bit",
     ammountCast: "19000 CAST",
     ammountevro: "2061.89",
-    time: {
-      count: 13,
-      watch: "minute",
-    },
+    dateTime: new Date("2024-04-02T23:59:59"),
     transaction: "0xee21...1a4f",
   },
   {
@@ -135,10 +123,7 @@ export const histories = [
     activity: "Bit",
     ammountCast: "19000 CAST",
     ammountevro: "2061.89",
-    time: {
-      count: 13,
-      watch: "minute",
-    },
+    dateTime: new Date("2024-03-27T23:59:59"),
     transaction: "0xee21...1a4f",
   },
   {
@@ -148,10 +133,7 @@ export const histories = [
     activity: "Bit",
     ammountCast: "19000 CAST",
     ammountevro: "2061.89",
-    time: {
-      count: 13,
-      watch: "minute",
-    },
+    dateTime: new Date("2024-03-28T23:59:59"),
     transaction: "0xee21...1a4f",
   },
   {
@@ -161,10 +143,7 @@ export const histories = [
     activity: "Bit",
     ammountCast: "19000 CAST",
     ammountevro: "2061.89",
-    time: {
-      count: 13,
-      watch: "minute",
-    },
+    dateTime: new Date("2024-03-29T23:59:59"),
     transaction: "0xee21...1a4f",
   },
 ]
