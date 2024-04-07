@@ -14,7 +14,7 @@ import {
 } from "react-share";
 
 const ShareBtn = () => {
-  const url = window.location.href;
+  const url = 'https://nft.caststudio.io/';
   return (
     <Popover placement="bottom-start">
       <PopoverHandler>
