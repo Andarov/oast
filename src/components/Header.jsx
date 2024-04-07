@@ -62,6 +62,10 @@ const Header = () => {
     };
   }, []);
 
+  const handleLinkClick = () => {
+    setOpenMobileNavbar(false);
+  };
+
   return (
     <>
       <header className="py-4">
@@ -153,6 +157,7 @@ const Header = () => {
               <ul className="space-y-3.5">
                 <li>
                   <NavLink
+                    onClick={handleLinkClick}
                     className="inline-block w-full text-3xl font-bold text-oast-midnight-100 hover:text-oast-primary-dark transition-all duration-300"
                     to="/"
                   >
@@ -161,6 +166,7 @@ const Header = () => {
                 </li>
                 <li>
                   <NavLink
+                    onClick={handleLinkClick}
                     className="inline-block w-full text-3xl font-bold text-oast-midnight-100 hover:text-oast-primary-dark transition-all duration-300"
                     to="/join-presale"
                   >
@@ -169,6 +175,7 @@ const Header = () => {
                 </li>
                 <li>
                   <NavLink
+                    onClick={handleLinkClick}
                     className="inline-block w-full text-3xl font-bold text-oast-midnight-100 hover:text-oast-primary-dark transition-all duration-300"
                     to="/help"
                   >
