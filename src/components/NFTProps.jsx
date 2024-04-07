@@ -12,7 +12,7 @@ const NFTProps = () => {
           <tbody className="divide-y divide-oast-midnight-700">
             {nftProps.map((prop) => {
               return (
-                <tr className="md:space-x-24">
+                <tr key={prop.id} className="md:space-x-24">
                   <td className="py-4 pr-3 text-sm font-medium text-oast-midnight-300 md:pl-0">
                     <span className="font-bold">{prop.title}</span>
                     <p className="py-3 md:py-5 text-sm text-oast-midnight-200 md:hidden whitespace-normal">
