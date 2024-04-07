@@ -1,10 +1,13 @@
 import React from 'react'
 
+// Component for displaying roadmap
 const Roadmap = () => {
   return (
     <section className="flex flex-col justify-center items-center">
+        {/* Roadmap title */}
         <h2 className="px-6 py-2 my-2 text-lg text-oast-midnight-200 rounded-full bg-oast-midnight-700">Roadmap</h2>
-        {/* roadmap */}
+        
+        {/* Individual roadmap items */}
         {/* 1 */}
         <div className="h-12 w-[4px] my-1 bg-oast-midnight-700"></div>
         <div className="flex justify-center text-center my-3 gap-3 items-center flex-col">
@@ -51,6 +54,7 @@ const Roadmap = () => {
                     <button aria-label="button" className="inline-flex items-center gap-2 whitespace-nowrap text-base leading-none font-medium focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 active:scale-95 hover:scale-105 duration-125 transition-all ease-in-out bg-oast-primary-medium text-oast-light hover:bg-oast-primary-dark h-14 rounded-xl p-5 justify-center w-full">Join Waitlist</button>
                 </div>
 
+                {/* Confirmation message */}
                 <div className="bg-midnight-900 rounded-2xl gap-4 items-center px-4 py-5 shadow-5xl mt-5 hidden flex-row">
                     <div className="flex gap-2 items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#6851FF" strokeWidth="1.2857142857142858" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-circle ">
@@ -64,6 +68,7 @@ const Roadmap = () => {
                     </div>
                 </div>
             </div>
+            {/* Subscribe to newsletter */}
             <p className="text-sm font-medium text-oast-midnight-300 text-center leading-6 my-3">Subscribe to the newsletter now to receive all the information for the sale</p>
         </div>
     </section>
