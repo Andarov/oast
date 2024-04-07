@@ -147,3 +147,21 @@ export const histories = [
     transaction: "0xee21...1a4f",
   },
 ]
+
+export const wallets = [
+  {
+    id: 1,
+    title: "MetaMask",
+    img: "https://iconic.dynamic-static-assets.com/icons/sprite.svg#metamask"
+  },
+  {
+    id: 2,
+    title: "Coinbase",
+    img: "https://iconic.dynamic-static-assets.com/icons/sprite.svg#coinbase"
+  },
+  {
+    id: 1,
+    title: "WalletConnect",
+    img: "https://iconic.dynamic-static-assets.com/icons/sprite.svg#walletconnect"
+  },
+]
