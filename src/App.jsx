@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
+// pages
 import Faq from './pages/Faq'
 import Home from './pages/Home'
 import PageNotFound from './pages/PageNotFound'
