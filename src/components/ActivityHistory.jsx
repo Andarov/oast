@@ -1,43 +1,52 @@
 import React, { useState, useEffect } from "react";
 import { histories } from "../data";
 
+/**
+ * Component for displaying activity history with pagination.
+ */
 const ActivityHistory = () => {
+  // State for pagination
   const [first, setFirst] = useState(1);
   const [last, setLast] = useState(6);
   const [isPrevActive, setIsPrevActive] = useState(false);
   const [isNextActive, setIsNextActive] = useState(true);
 
+  // Sort history data by dateTime
   const sortedHistories = histories.sort((a, b) => b.dateTime - a.dateTime);
 
+  // Update pagination button states
   useEffect(() => {
-    // Previous button state
     setIsPrevActive(first > 1);
-    // Next button state
     setIsNextActive(last * first < histories.length);
   }, [first, last]);
 
+  // Handle click on previous button
   const handlePreviousClick = () => {
     setFirst(first - 1);
   };
 
+  // Handle click on next button
   const handleNextClick = () => {
     setFirst(first + 1);
   };
 
+  // Calculate indices for slicing history data
   const lastIndex = first * last;
   const firstIndex = lastIndex - last;
-
   const carsSlicedArr = sortedHistories.slice(firstIndex, lastIndex);
 
+  // Function to format time difference
   function formatTimeDifference(dateTime) {
     const now = new Date();
     const diffMilliseconds = now - dateTime;
 
+    // Milliseconds for different time intervals
     const minuteMilliseconds = 60 * 1000;
     const hourMilliseconds = 60 * minuteMilliseconds;
     const dayMilliseconds = 24 * hourMilliseconds;
     const yearMilliseconds = 365 * dayMilliseconds;
 
+    // Format time difference based on milliseconds
     if (diffMilliseconds < minuteMilliseconds) {
       const diffSeconds = Math.round(diffMilliseconds / 1000);
       return `${diffSeconds} seconds ago`;
@@ -58,8 +67,10 @@ const ActivityHistory = () => {
     }
   }
 
+  // Render component
   return (
     <div>
+      {/* Activity history table */}
       <div className="flex flex-col mt-10 lg:mt-20 mb-5">
         <h1 className="text-lg font-bold text-oast-midnight-200 font-montserrat">
           Activity history
@@ -68,6 +79,7 @@ const ActivityHistory = () => {
           <table className="min-w-full divide-y divide-oast-midnight-700">
             <thead>
               <tr>
+                {/* Table headers */}
                 <th
                   scope="col"
                   className="py-5 pl-4- pr-3 text-left text-sm font-semibold text-oast-midnight-300 md:pl-0"
@@ -101,14 +113,17 @@ const ActivityHistory = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-oast-midnight-700">
+              {/* Render table rows */}
               {carsSlicedArr.map((tab, index) => {
                 return (
                   <tr key={index}>
+                    {/* Activity type */}
                     <td className="whitespace-nowrap py-4 pr-3 text-sm font-medium text-oast-midnight-700 md:pl-0">
                       <div className="rounded-full text-sm font-medium w-fit px-2 py-0.5 items-center inline-flex bg-[#ACDFF7] capitalize">
                         bid
                       </div>
                     </td>
+                    {/* Account information */}
                     <td className="whitespace-nowrap font-dmSans px-3 md:px-0 py-5 text-sm text-oast-midnight-200">
                       <div className="flex items-center gap-2 text-oast-midnight-200 text-sm">
                         <span className="relative flex shrink-0 overflow-hidden rounded-full h-6 w-6">
@@ -121,6 +136,7 @@ const ActivityHistory = () => {
                         <span>{tab.account}</span>
                       </div>
                     </td>
+                    {/* Amount */}
                     <td className="whitespace-nowrap px-3 md:px-0 py-5 text-sm text-oast-midnight-200">
                       <div className="flex gap-2">
                         <span className="text-oast-light font-bold">
@@ -131,9 +147,11 @@ const ActivityHistory = () => {
                         </span>
                       </div>
                     </td>
+                    {/* Time */}
                     <td className="whitespace-nowrap px-3 md:px-0 py-5 text-sm text-oast-midnight-200">
                       {formatTimeDifference(tab.dateTime)}
                     </td>
+                    {/* Transaction */}
                     <td className="whitespace-nowrap font-dmSans px-3 md:px-0 py-5 text-sm text-oast-midnight-200">
                       <a
                         className="inline-flex group w-full"
@@ -169,13 +187,14 @@ const ActivityHistory = () => {
         </div>
       </div>
 
-      {/* pagination */}
+      {/* Pagination */}
       <nav
         role="navigation"
         aria-label="pagination"
         className="mx-auto flex w-full justify-center"
       >
         <ul className="flex flex-row items-center gap-1">
+          {/* Previous button */}
           <li>
             <button
               onClick={handlePreviousClick}
@@ -204,6 +223,7 @@ const ActivityHistory = () => {
               <span>Previous</span>
             </button>
           </li>
+          {/* Next button */}
           <li>
             <button
               onClick={handleNextClick}
