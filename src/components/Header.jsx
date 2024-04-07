@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-// images
+// Image
 import logo from "../assets/logo.svg";
+
 const Header = () => {
+  // State for controlling mobile navbar visibility
   const [openMobileNavbar, setOpenMobileNavbar] = useState(false);
+
+  // State for mobile navbar styles
   const [mobileNavbarStyles, setMobileNavbarStyles] = useState({
     display: "none",
     transform: "translateY(100%)",
@@ -12,6 +16,7 @@ const Header = () => {
   });
 
   useEffect(() => {
+    // Show/hide mobile navbar
     if (openMobileNavbar) {
       document.body.classList.add("overflow-y-hidden");
       setMobileNavbarStyles({
@@ -47,7 +52,7 @@ const Header = () => {
     }
   }, [openMobileNavbar]);
 
-  // close navbar
+  // Close mobile navbar when Escape key is pressed
   useEffect(() => {
     const handleEscKey = (event) => {
       if (event.key === "Escape") {
@@ -62,15 +67,18 @@ const Header = () => {
     };
   }, []);
 
+  // Close mobile navbar when a link is clicked
   const handleLinkClick = () => {
     setOpenMobileNavbar(false);
   };
 
   return (
     <>
+      {/* Header */}
       <header className="py-4">
         <div className="w-full max-w-base mx-auto px-5 flex justify-between items-center">
           <div className="flex items-center gap-4">
+            {/* Mobile navbar toggle button */}
             <button
               onClick={() => setOpenMobileNavbar(true)}
               className="block 640:hidden"
@@ -82,23 +90,24 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="text-white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-white"
               >
-                <line x1="4" x2="20" y1="12" y2="12" />
-                <line x1="4" x2="20" y1="6" y2="6" />
-                <line x1="4" x2="20" y1="18" y2="18" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="18" x2="20" y2="18" />
               </svg>
             </button>
-            {/* logo */}
+            {/* Logo */}
             <Link to="/">
               <img src={logo} alt="Logo" />
             </Link>
           </div>
 
           <div className="flex items-center gap-8">
+            {/* Main navigation */}
             <nav className="hidden 640:block">
               <ul className="flex items-center gap-8">
                 <li>
@@ -128,6 +137,7 @@ const Header = () => {
               </ul>
             </nav>
 
+            {/* Connect wallet button */}
             <button className="px-5 py-3.5 bg-oast-primary-medium rounded-xl shadow-btn text-sm text-oast-light font-bold border border-[#282b33]">
               Connect your wallet
             </button>
@@ -135,24 +145,24 @@ const Header = () => {
         </div>
       </header>
 
-      {/* mobile navbar */}
+      {/* Mobile navbar */}
       <div
         style={{ display: mobileNavbarStyles.display }}
         className={`fixed inset-0 z-50 w-full min-h-screen 640:!hidden`}
       >
-        {/* contents */}
+        {/* Mobile navbar contents */}
         <div
           style={{ transform: mobileNavbarStyles.transform }}
           className="relative z-10 w-full h-[calc(100%-48px)] bg-oast-main rounded-t-3xl mt-12 p-6 pt-4 transition-transform duration-300"
         >
-          {/* top */}
+          {/* Top bar */}
           <div className="flex justify-center w-full mb-6">
             <div className="w-[100px] h-2 bg-oast-midnight-700 rounded-full"></div>
           </div>
 
-          {/* main */}
+          {/* Main content */}
           <div className="h-[calc(100%-32px)] overflow-y-auto space-y-12">
-            {/* nav */}
+            {/* Navigation */}
             <nav className="mobile-nav">
               <ul className="space-y-3.5">
                 <li>
@@ -185,7 +195,7 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* social */}
+            {/* Social links */}
             <ul className="space-y-3.5">
               <li>
                 <a
@@ -225,7 +235,7 @@ const Header = () => {
               </li>
             </ul>
 
-            {/* extra */}
+            {/* Additional links */}
             <div className="space-y-3.5">
               <ul className="space-y-3.5">
                 <li>
@@ -271,7 +281,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* overlay */}
+        {/* Overlay */}
         <div
           onClick={() => setOpenMobileNavbar(false)}
           style={{ opacity: mobileNavbarStyles.opacity }}
