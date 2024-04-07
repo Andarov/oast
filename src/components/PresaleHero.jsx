@@ -100,7 +100,7 @@ const PresaleHero = () => {
       </div>
 
       {/* hero-img */}
-      <div className="hidden lg:flex relative h-full aspect-square w-full max-w-[651px] rounded-lg">
+      <div className="hidden lg:flex relative h-full aspect-[201/307] w-full max-w-[651px] rounded-lg">
         <img
           className="absolute h-full w-full inset-0 text-transparent"
           src={precalehero}
