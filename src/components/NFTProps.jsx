@@ -3,7 +3,7 @@ import { nftProps } from "../data";
 
 const NFTProps = () => {
   return (
-    <section>
+    <section className="pt-6">
       <h2 className="font-bold text-lg leading-6 text-oast-midnight-200">
         NFT Properties
       </h2>
