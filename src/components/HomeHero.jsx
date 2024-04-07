@@ -4,8 +4,16 @@ import ischgl from "../assets/ischgl.webp";
 import homehero from "../assets/homehero.webp";
 import greenSquare from "../assets/green-square.svg";
 import Countdown from "./Countdown";
+import { useState } from "react";
 
 const HomeHero = () => {
+  const cast = 25000;
+  const [bidInputValue, setBidInputValue] = useState("");
+
+  const getBidInputValue = (e) => {
+    setBidInputValue(e.target.value);
+  };
+
   return (
     <div className="flex flex-col-reverse justify-between lg:flex-row gap-4 xl:gap-36 lg:gap-8">
       <div className="flex flex-col justify-between mt-7 md:mt-0 w-full">
@@ -53,7 +61,9 @@ const HomeHero = () => {
         </div>
 
         <div>
-          <h1 className="font-montserrat text-3xl lg:text-5xl font-bold">#0001</h1>
+          <h1 className="font-montserrat text-3xl lg:text-5xl font-bold">
+            #0001
+          </h1>
           <p className="text-oast-midnight-200 font-medium mt-5 lg:w-1/2">
             ISCHGL x LEGO® inspired NFT Shapes in White 2024
           </p>
@@ -78,14 +88,14 @@ const HomeHero = () => {
             <div>
               <p className="text-oast-midnight-300 text-sm">Auction ends in</p>
               <div className="text-lg text-oast-midnight-300 font-bold">
-                <Countdown date={new Date("2024-04-10T23:59:59")}/>
+                <Countdown date={new Date("2024-04-10T23:59:59")} />
               </div>
             </div>
             {/* highest bid */}
             <div className="flex flex-col">
               <p className="text-oast-midnight-300 text-sm">Highest bid</p>
               <span className="text-lg text-oast-midnight-300 font-bold ">
-                25000 CAST
+                {cast} CAST
               </span>
             </div>
           </div>
@@ -93,29 +103,56 @@ const HomeHero = () => {
           {/* bid input & info */}
           <div>
             {/* input for bid */}
-            <div className="shadow-sm p-3 rounded-lg bg-oast-midnight-800">
+            <div className="shadow-sm ring-inset focus-within:ring-2 focus-within:ring-oast-primary-dark p-3 rounded-lg bg-oast-midnight-800">
               <label
                 htmlFor="bid"
                 className="block text-sm font-medium text-oast-midnight-300"
               >
-                Price (≈ 0 € + Fees)
+                <span>
+                  Price (≈{" "}
+                  {bidInputValue === ""
+                    ? 0
+                    : `${Math.round(bidInputValue * 0.096 * 100) / 100}`}{" "}
+                  € + Fees)
+                </span>
               </label>
               <div className="flex justify-between items-center gap-2">
                 <input
                   type="number"
+                  onChange={getBidInputValue}
+                  value={bidInputValue}
                   className="flex h-10 w-full rounded-md border-input file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none font-bold bg-transparent text-oast-light placeholder:text-oast-midnight-300 text-2xl p-0 border-0 appearance-none"
                   id="bid"
                   placeholder="0.00"
                 />
-                <p className="text-2xl text-oast-midnight-300 font-bold">CAST</p>
+                <p className="text-2xl text-oast-midnight-300 font-bold">
+                  CAST
+                </p>
               </div>
             </div>
+
             {/* bid info */}
-            <div className="flex items-center text-oast-midnight-300 text-sm mt-2 font-medium gap-2">
+            <div className=" flex items-center text-oast-midnight-300 text-sm mt-2 font-medium gap-2">
               <div className="space-y-2">
                 <div className="flex space-x-2 items-center">
+                  <svg
+                    className={`${bidInputValue === '' || bidInputValue > 25000 ? 'hidden' : 'block'}`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#f80612"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                    <path d="M12 9v4"></path>
+                    <path d="M12 17h.01"></path>
+                  </svg>
                   <span> Your bid should be higher than</span>
-                  <span className="text-oast-midnight-200"> 25000 CAST</span>
+                  <span className="text-midnight-200"> {cast} CAST</span>
                 </div>
                 <p>
                   Gas prices are changing rapidly, you might need to add more
@@ -134,11 +171,12 @@ const HomeHero = () => {
               Just follow the steps in the next screen.
             </p>
           </div>
-
+          
+          {/* bid-btn */}
           <button
             aria-label="button"
             className="inline-flex items-center gap-2 whitespace-nowrap text-base leading-none font-medium  active:scale-95 hover:scale-105 duration-125 transition-all ease-in-out bg-oast-primary-medium text-midnight-100 hover:bg-oast-primary-dark h-14 rounded-xl p-5 justify-center disabled:pointer-events-none disabled:opacity-50"
-            disabled=""
+            disabled={bidInputValue > 25000 ? false : true}
           >
             Place bid
           </button>
@@ -148,7 +186,7 @@ const HomeHero = () => {
       <div className="relative aspect-square lg:min-w-[654px] rounded-lg overflow-hidden">
         <img
           alt="bid"
-          className="absolute inset-0 text-transparent"
+          className="absolute inset-0 text-transparent rounded-lg"
           src={homehero}
         />
       </div>
