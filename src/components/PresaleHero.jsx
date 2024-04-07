@@ -5,14 +5,16 @@ import ischgl from "../assets/ischgl.webp";
 import Countdown from "./Countdown";
 import ShareBtn from "./ShareBtn";
 
+// Component for the presale hero section
 const PresaleHero = () => {
   return (
     <div className="flex justify-between flex-col lg:flex-row items-start gap-8">
-      {/* hero-content */}
+      {/* Hero content */}
       <div className="w-full lg:max-w-md">
-        {/* share-btn */}
+        {/* Share button */}
         <ShareBtn/>
 
+        {/* Title and description */}
         <h1 className="font-semibold text-3xl sm:text-5xl mt-9 -tracking-[0.09rem] font-montserrat">
           Open the door to a world of NFT art!
         </h1>
@@ -25,7 +27,8 @@ const PresaleHero = () => {
           most importantly the breathtaking world of LEGO. The details will be
           published in the newsletter and on this page from January.
         </p>
-        {/* mobile hero img */}
+
+        {/* Mobile hero image */}
         <div className="lg:hidden mt-8 relative aspect-[217/307] rounded-lg">
           <img
             className="absolute h-full w-full inset-0 text-transparent"
@@ -33,7 +36,8 @@ const PresaleHero = () => {
             alt="precale hero mobile"
           />
         </div>
-        {/* collaboration */}
+
+        {/* Collaboration information */}
         <div className="flex items-center gap-2.5 py-4 border-y border-oast-midnight-700 mt-4">
           <div className="flex flex-shrink-0 items-center gap-2.5">
             <img src={lego} width={40} height={40} alt="lego logo" />
@@ -44,17 +48,19 @@ const PresaleHero = () => {
             <span>with ISCHGL x LEGO®.</span>
           </span>
         </div>
+
+        {/* Countdown and join waitlist button */}
         <div className="mt-8 gap-6 mb-6 flex flex-col">
-          {/* first drop countdown */}
           <div>
+            {/* Countdown to first drop */}
             <p className="text-oast-midnight-300 text-sm">First Drop in</p>
             <div className="text-lg text-oast-midnight-300 font-bold">
-            <Countdown date={new Date("2024-04-09T23:59:59")}/>
+              <Countdown date={new Date("2024-04-09T23:59:59")}/>
             </div>
           </div>
           <div>
             <div className="flex flex-col gap-6">
-              {/* primary-btn */}
+              {/* Join waitlist button */}
               <button
                 aria-label="button"
                 className="inline-flex items-center gap-2 whitespace-nowrap text-base leading-none font-medium focus-visible:outline-none focus-visible:ring-2 active:scale-95 hover:scale-105 duration-125 transition-all ease-in-out bg-oast-primary-medium text-oast-light hover:bg-oast-primary-dark h-14 rounded-xl p-5 justify-center lg:w-1/2"
@@ -67,7 +73,7 @@ const PresaleHero = () => {
                 presale.
               </p>
             </div>
-            {/* mobile text */}
+            {/* Mobile confirmation message */}
             <div className="bg-midnight-900 rounded-2xl gap-4 items-center px-4 py-5 shadow-5xl mt-5 hidden flex-row">
               <div className="flex gap-2 items-center">
                 <svg
@@ -99,7 +105,7 @@ const PresaleHero = () => {
         </div>
       </div>
 
-      {/* hero-img */}
+      {/* Hero image */}
       <div className="hidden lg:flex relative h-full aspect-[201/307] w-full max-w-[651px] rounded-lg">
         <img
           className="absolute h-full w-full inset-0 text-transparent"
