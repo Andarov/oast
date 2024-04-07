@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const PageNotFound = () => {
   return (
     <div>
-      <div className="flex-1 py-5 max-w-xl lg:max-w-none sm:mx-auto lg:mx-0">
+      <div className="flex-1 py-5">
         <div className="py-24">
           <div className="text-center space-y-5">
             <p className="text-sm font-semibold text-[#6851FF] uppercase tracking-wide">

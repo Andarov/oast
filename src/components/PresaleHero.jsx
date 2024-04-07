@@ -9,7 +9,7 @@ const PresaleHero = () => {
   return (
     <div className="flex justify-between flex-col lg:flex-row items-start gap-8">
       {/* hero-content */}
-      <div className="max-w-md w-full">
+      <div className="w-full lg:max-w-md">
         {/* share-btn */}
         <ShareBtn/>
 
@@ -57,7 +57,7 @@ const PresaleHero = () => {
               {/* primary-btn */}
               <button
                 aria-label="button"
-                className="inline-flex items-center gap-2 whitespace-nowrap text-base leading-none font-medium focus-visible:outline-none focus-visible:ring-2 active:scale-95 hover:scale-105 duration-125 transition-all ease-in-out bg-oast-primary-medium text-oast-light hover:bg-oast-primary-dark h-14 rounded-xl p-5 justify-center w-1/2"
+                className="inline-flex items-center gap-2 whitespace-nowrap text-base leading-none font-medium focus-visible:outline-none focus-visible:ring-2 active:scale-95 hover:scale-105 duration-125 transition-all ease-in-out bg-oast-primary-medium text-oast-light hover:bg-oast-primary-dark h-14 rounded-xl p-5 justify-center lg:w-1/2"
               >
                 Join Waitlist
               </button>
@@ -100,11 +100,12 @@ const PresaleHero = () => {
       </div>
 
       {/* hero-img */}
-      <div className="hidden lg:flex relative h-full aspect-[217/307] w-full max-w-[651px] rounded-lg">
+      <div className="hidden lg:flex relative h-full aspect-square w-full max-w-[651px] rounded-lg">
         <img
           className="absolute h-full w-full inset-0 text-transparent"
           src={precalehero}
           alt="ISCHGL"
+          sizes="100vw"
         />
       </div>
     </div>

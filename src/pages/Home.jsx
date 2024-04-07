@@ -10,7 +10,7 @@ const Home = () => {
       "CASTSTUDIO | The Bridge Between Web2 and Web3 | Castellocoin";
   }, []);
   return (
-    <div className="flex-1 py-5 max-w-xl lg:max-w-none sm:mx-auto lg:mx-0">
+    <div className="flex-1 py-5">
       <HomeHero/>
       <ActivityHistory/>
       <NFTProps/>

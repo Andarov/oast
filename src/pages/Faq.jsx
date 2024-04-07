@@ -11,7 +11,7 @@ function Icon({ id, open }) {
     <svg
       className={`${
         id === open ? "rotate-180" : ""
-      } h-4 w-4 transition-transform`}
+      } h-4 w-4 transition-transform shrink-0 duration-200`}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -21,7 +21,6 @@ function Icon({ id, open }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-plus h-4 w-4 shrink-0 transition-transform duration-200"
     >
       <path d="M5 12h14"></path>
       <path d="M12 5v14"></path>
@@ -35,7 +34,7 @@ const Faq = () => {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   return (
-    <div className="flex-1 py-5 max-w-xl lg:max-w-none sm:mx-auto lg:mx-0">
+    <div className="flex-1 py-5">
       <h1 className="text-6xl font-montserrat md:text-8xl font-bold my-6 text-center uppercase">
         FAQ
       </h1>

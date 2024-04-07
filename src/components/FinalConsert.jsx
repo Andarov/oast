@@ -3,7 +3,7 @@ import finalconsert from '../assets/finalconsert.webp'
 
 const FinalConsert = () => {
   return (
-    <div className="max-w-md lg:max-w-full bg-oast-midnight-700 py-10 px-4 rounded-xl flex flex-col-reverse lg:flex-row gap-8 mt-20">
+    <div className="lg:max-w-full bg-oast-midnight-700 py-10 px-4 rounded-xl flex flex-col-reverse lg:flex-row gap-8 mt-20">
         <img className='aspect-[653/633]' style={{color: 'transparent'}} src={finalconsert} alt="final consert ticket" width={753} height={733} />
         <div className="text-oast-light space-y-5 place-self-center lg:w-1/3">
             <p className="text-lg font-medium text-center lg:text-start">ISCHGL</p>

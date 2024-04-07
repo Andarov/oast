@@ -32,7 +32,6 @@ module.exports = withMT({
         montserrat: "Montserrat, Arial, sans-serif",
       },
     },
-
     screens: {
       sm: "540px",
       640: "640px",
