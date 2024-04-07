@@ -18,10 +18,10 @@ function Icon({ id, open }) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-plus h-4 w-4 shrink-0 transition-transform duration-200"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-plus h-4 w-4 shrink-0 transition-transform duration-200"
     >
       <path d="M5 12h14"></path>
       <path d="M12 5v14"></path>
@@ -35,12 +35,12 @@ const Faq = () => {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   return (
-    <div class="flex-1 py-5 max-w-xl lg:max-w-none sm:mx-auto lg:mx-0">
-      <h1 class="text-6xl font-montserrat md:text-8xl font-bold my-6 text-center uppercase">
+    <div className="flex-1 py-5 max-w-xl lg:max-w-none sm:mx-auto lg:mx-0">
+      <h1 className="text-6xl font-montserrat md:text-8xl font-bold my-6 text-center uppercase">
         FAQ
       </h1>
 
-      <div class="max-w-2xl mx-auto px-3 mt-7 py-20">
+      <div className="max-w-2xl mx-auto px-3 mt-7 py-20">
         <div className="border-t border-[#2A224B]">
           {faqData.map((faq) => {
             return (
