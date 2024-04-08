@@ -6,7 +6,7 @@ import Countdown from "./Countdown";
 import ShareBtn from "./ShareBtn";
 
 // Component for the presale hero section
-const PresaleHero = () => {
+const PresaleHero = ({handleOpenModal}) => {
   return (
     <div className="flex justify-between flex-col lg:flex-row items-start gap-8">
       {/* Hero content */}
@@ -62,6 +62,7 @@ const PresaleHero = () => {
             <div className="flex flex-col gap-6">
               {/* Join waitlist button */}
               <button
+                onClick={handleOpenModal}
                 aria-label="button"
                 className="inline-flex items-center gap-2 whitespace-nowrap text-base leading-none font-medium focus-visible:outline-none focus-visible:ring-2 active:scale-95 hover:scale-105 duration-125 transition-all ease-in-out bg-oast-primary-medium text-oast-light hover:bg-oast-primary-dark h-14 rounded-xl p-5 justify-center lg:w-1/2"
               >

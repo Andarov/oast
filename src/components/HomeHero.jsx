@@ -6,7 +6,7 @@ import greenSquare from "../assets/green-square.svg";
 import Countdown from "./Countdown";
 import ShareBtn from "./ShareBtn";
 
-const HomeHero = () => {
+const HomeHero = ({handleOpenModal}) => {
   // The current highest bid value
   const cast = 25000;
   // State for bid input value
@@ -147,6 +147,7 @@ const HomeHero = () => {
 
           {/* Bid button */}
           <button
+            onClick={handleOpenModal}
             aria-label="button"
             className="inline-flex items-center gap-2 whitespace-nowrap text-base leading-none font-medium  active:scale-95 hover:scale-105 duration-125 transition-all ease-in-out bg-oast-primary-medium text-midnight-100 hover:bg-oast-primary-dark h-14 rounded-xl p-5 justify-center disabled:pointer-events-none disabled:opacity-50"
             disabled={bidInputValue > 25000 ? false : true}

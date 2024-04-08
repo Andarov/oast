@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 // Image
 import logo from "../assets/logo.svg";
 
-const Header = () => {
+const Header = ({handleOpenModal}) => {
   // State for controlling mobile navbar visibility
   const [openMobileNavbar, setOpenMobileNavbar] = useState(false);
 
@@ -138,7 +138,7 @@ const Header = () => {
             </nav>
 
             {/* Connect wallet button */}
-            <button className="px-5 py-3.5 bg-oast-primary-medium rounded-xl shadow-btn text-sm text-oast-light font-bold border border-[#282b33]">
+            <button onClick={handleOpenModal} className="px-5 py-3.5 bg-oast-primary-medium rounded-xl shadow-btn text-sm text-oast-light font-bold border border-[#282b33]">
               Connect your wallet
             </button>
           </div>

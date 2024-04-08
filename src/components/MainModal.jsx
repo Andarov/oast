@@ -1,19 +1,18 @@
-import React from "react";
+import React from 'react'
 import { wallets } from "../data";
 
-const Modal = () => {
+const MainModal = ({isValid, handleSubmit, showWalletModal, handleCloseModal}) => {
   return (
-    <div className="fixed inset-0 w-full h-screen flex justify-center items-center bg-[rgba(0,0,0,0.25] backdrop-blur-sm">
-      <div className="p-6 bg-oast-main w-full max-w-[360px] rounded-xl">
-        {/* modal-header */}
+    <div className="p-6 bg-oast-main w-full max-w-[360px] rounded-xl">
+        {/* Modal Header */}
         <div className="relative mb-5">
-          <h1 className="text-center text-oast-light text-base">
+          <h1 className="text-center text-oast-light text-lg font-medium">
             Log in or sign up
           </h1>
-          {/* exit-btn */}
-          <button className="absolute right-0 top-0.5" type="button">
+          {/* Close Button */}
+          <button onClick={handleCloseModal} className="absolute right-0 top-0" type="button">
             <svg
-              className="text-oast-midnight-300"
+              className="text-oast-midnight-300 w-6 h-6"
               width="20"
               height="20"
               viewBox="0 0 20 20"
@@ -32,24 +31,32 @@ const Modal = () => {
 
         <div>
           <div className="gap-1.5">
-            {/* email form */}
-            <form className="flex flex-col gap-1.5">
-              {/* email input */}
+            {/* Email Form */}
+            <form onSubmit={handleSubmit} className="flex flex-col gap-1.5">
+              {/* Email Input */}
               <div className="relative">
                 <input
                   type="email"
                   id="email_field"
-                  className="w-full px-3 pt-[18px] pb-1.5 bg-oast-midnight-700 border border-oast-midnight-700 text-oast-light text-[15px] rounded-xl focus:placeholder:text-transparent"
+                  className={`w-full p-3 border text-oast-light text-[15px] rounded-xl focus:outline-none ${
+                    isValid
+                      ? "border-oast-midnight-700 bg-oast-midnight-700"
+                      : "border-[#ff6a6a] bg-[#3c1a2f]"
+                  }`}
                   placeholder="Enter your email"
+                  onFocus={() => (this.placeholder = "")}
+                  onBlur={() => (this.placeholder = "Enter your email")}
                 />
-                <label
-                  htmlFor="email_field"
-                  className="absolute left-3 top-2 text-[10px] whitespace-nowrap"
+                <p
+                  className={`${
+                    isValid ? "hidden" : "block"
+                  } text-[11px] font-medium text-[#ff6a6a] pt-1 pl-3`}
                 >
-                  Enter your email
-                </label>
+                  Invalid or incorrect email. Did you mistype it?
+                </p>
               </div>
-              {/* submit-btn */}
+
+              {/* Submit Button */}
               <button
                 type="submit"
                 className="h-10 bg-[#4779ff] rounded-xl text-base"
@@ -59,16 +66,16 @@ const Modal = () => {
               </button>
             </form>
 
-            {/* divider & or */}
+            {/* Divider & OR */}
             <div className="flex items-center justify-between gap-3 py-4">
               <div className="w-full h-px bg-oast-midnight-600"></div>
-              <p className="text-[#a8a1c5] text-sm fw-bold">OR</p>
+              <p className="text-[#a8a1c5] text-sm font-bold">OR</p>
               <div className="w-full h-px bg-oast-midnight-600"></div>
             </div>
 
-            {/* wallets */}
+            {/* Wallets */}
             <div className="flex flex-col gap-1.5">
-              {wallets.map((wallet) => {
+              {wallets.slice(0,4).map((wallet) => {
                 return (
                   <button
                     key={wallet.id}
@@ -85,7 +92,7 @@ const Modal = () => {
                     </span>
 
                     <svg
-                      className="hidden text-oast-light w-4 h-4 duration-500 opacitiy-0 group-hover:opacity-100 group-hover:inline-block"
+                      className="hidden text-oast-light w-4 h-4 duration-500 opacity-0 group-hover:opacity-100 group-hover:inline-block"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -102,8 +109,8 @@ const Modal = () => {
                   </button>
                 );
               })}
-              {/* all wallets */}
-              <button className="group flex items-center justify-between w-full text-oast-light p-3 rounded-xl bg-transparent shadow-btn hover:bg-oast-midnight-600 transition-all duration-300">
+              {/* View All Wallets Button */}
+              <button onClick={showWalletModal} className="group flex items-center justify-between w-full text-oast-light p-3 rounded-xl bg-transparent shadow-btn hover:bg-oast-midnight-600 transition-all duration-300">
                 <span>View all wallets</span>
 
                 <div className="flex items-center">
@@ -112,7 +119,7 @@ const Modal = () => {
                   </span>
 
                   <svg
-                    className="hidden text-oast-light w-4 h-4 duration-500 opacitiy-0 group-hover:opacity-100 group-hover:inline-block"
+                    className="hidden text-oast-light w-4 h-4 duration-500 opacity-0 group-hover:opacity-100 group-hover:inline-block"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -132,8 +139,7 @@ const Modal = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+  )
+}
 
-export default Modal;
+export default MainModal

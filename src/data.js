@@ -160,9 +160,19 @@ export const wallets = [
     img: "https://iconic.dynamic-static-assets.com/icons/sprite.svg#coinbase"
   },
   {
-    id: 1,
+    id: 3,
     title: "WalletConnect",
     img: "https://iconic.dynamic-static-assets.com/icons/sprite.svg#walletconnect"
+  },
+  {
+    id: 4,
+    title: "Trust",
+    img: "https://iconic.dynamic-static-assets.com/icons/sprite.svg#7677b54f-3486-46e2-4e37-bf8747814f00"
+  },
+  {
+    id: 5,
+    title: "Rainbow",
+    img: "https://iconic.dynamic-static-assets.com/icons/sprite.svg#rainbow"
   },
 ]
 
