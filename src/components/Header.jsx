@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
 // Image
 import logo from "../assets/logo.svg";
 

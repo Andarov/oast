@@ -75,7 +75,7 @@ const MainModal = ({isValid, handleSubmit, showWalletModal, handleCloseModal}) =
 
             {/* Wallets */}
             <div className="flex flex-col gap-1.5">
-              {wallets.slice(0,4).map((wallet) => {
+              {wallets.slice(0,3).map((wallet) => {
                 return (
                   <button
                     key={wallet.id}
