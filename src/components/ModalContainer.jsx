@@ -28,7 +28,7 @@ const ModalContainer = ({handleCloseModal}) => {
   };
 
   return (
-      <div className="fixed inset-0 w-full h-screen flex justify-center items-center bg-[rgba(0,0,0,0.25)] backdrop-blur-sm" onClick={handleCloseModal}>
+      <div className="fixed inset-0 w-full h-screen flex justify-center items-center bg-[rgba(0,0,0,0.25)] backdrop-blur-sm" onClick={(e) => e.stopPropagation()}>
         {!walletModal && mainModal && <MainModal handleCloseModal={handleCloseModal} isValid={isValid} handleSubmit={handleSubmit} showWalletModal={showWalletModal}/>}
         {walletModal && !mainModal && <WalletModal showMainModal={showMainModal}/>}
       </div>
